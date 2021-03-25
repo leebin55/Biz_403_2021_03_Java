@@ -18,11 +18,12 @@ public class Money_001 {
 			nPay %= n5Man;
 			if (sw>0) {
 				n5Man /= 5;
+				sw *=(-1);
 			
 			}else {
 					
 						n5Man /=2;
-					
+						sw *=(-1);
 			}
 		}
 	}
