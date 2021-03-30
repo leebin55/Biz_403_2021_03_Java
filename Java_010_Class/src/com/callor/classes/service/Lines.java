@@ -21,4 +21,12 @@ public class Lines {
 		
 		//return과 format과 replace 한번에
 	}
+	public static String dLine11(int nCount) {
+		
+		//print ("=" * 10) : "=" 문자열을 10개 만들어서 출력
+		
+		//java11 이상에서 연속된 문자열을 만드는 method
+		String dLine = "=".repeat(nCount);
+		return dLine;
+	}
 }

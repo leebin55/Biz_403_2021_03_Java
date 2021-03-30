@@ -8,8 +8,41 @@ import com.callor.classes.model.ScoreVO;
 
 public class ScoreServiceV1 {
 
-	Scanner scan;
-	List<ScoreVO> scoreList;
+	/*
+	 * 접근제한자(참조제한자)
+	 * public, private, protected
+	 * 
+	 * class, method, 맴버변수를 선언할때 사용하는 keyword
+	 * 접근제어자를 사용하지 않아도 문법적인 오류는 발생하지 않음
+	 * 		객체지향 이론에 "정보은닉"(감춤 ,제한적으로 접근하게 함,데이터를 보호)
+	 * 
+	 * public : 모두에게 개방한다. 모두에게 공개한다.
+	 * 			누구나 접근(읽기, 쓰기, 실행)을 하게함
+	 * 			Class obj = new Calss()
+	 * 			obj.method();
+	 * 			obj.변수 = 100;
+	 * 
+	 * private : 현재 클래스(파일)에 있는 코드에서만 접근가능(가장 정보은닉 )
+	 * 			그 클래스 내에서만 접근
+	 * 			obj.변수 = 100; >>문법오류
+	 * protected : 생성된 객체를 통해서는 직접 접근 금지
+	 * 			Class obj = new Class()
+	 * 			obj.method() 방식으로 접근 안됨
+	 * 			클래스를 상속받게 하겠다라는 전제하에 상속을 받은 클래스에서는
+	 * 			자유롭게 접근가능
+	 * 			부모클래스와 자식클래스(상속받은) 간에 공유하는 목적
+	 */
+	
+	/*
+	 * 멤버변수를 protected로 선언을 해 두면
+	 * 현재클래스(V1)를 상속받은 자식클래스에서 변수가 
+	 * 선언된 것처럼 동작 할 수 있다. 
+	 * 
+	 * 상속을 허락하고 멤버변수를 공유하고자 할때는 protected를 추가한다.
+	 */
+	protected Scanner scan; //protected 접근제한자
+	
+	protected List<ScoreVO> scoreList;
 
 	public ScoreServiceV1() {
 		scan = new Scanner(System.in);
