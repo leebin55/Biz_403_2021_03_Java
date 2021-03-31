@@ -8,7 +8,7 @@ public class IolistEx_03 {
 		
 		IolistServiceV1A ioV1 = new IolistServiceV1A();
 		
-		ioV1.input();
-		ioV1.selectMenu();
+		//ioV1.input();
+		ioV1.selectMenu(); 
 	}
 }

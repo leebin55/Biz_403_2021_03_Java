@@ -31,39 +31,44 @@ public class IolistServiceV2 extends IolistServiceV1A {
 
 		System.out.println("수량 >> ");
 		Integer qty = scan.nextInt();
-		Integer iprice= 0;
+
+		// 매입단가와 매출단가는 0 이상만 입력
+		// 매입단가가 0 이상이면 다음 항목을 입력받도록
+		// while 반복문 중ㄷ단
+		// 매입단가 < 0 이면 계속해서 반복문 내에서 입력을 받도록
+		Integer iprice = 0;
 		while (true) {
 			System.out.print("매입단가 >> ");
 			iprice = scan.nextInt();
 			if (iprice < 0) {
 				System.out.println("오류 : 매입단가는 0이상이여야 합니다.");
-				continue;
+			} else {
+				break;
 			}
-			break;
-		}
-		Integer oprice = 0; 
-		while (true) {
-			System.out.println("매출단가 >> ");
-			oprice = scan.nextInt();
-			if (oprice < 0) {
-				System.out.println("오류 : 매출단가는 0이상이여야 합니다.");
-				continue;
+			Integer oprice = 0;
+			while (true) {
+				System.out.println("매출단가 >> ");
+				oprice = scan.nextInt();
+				if (oprice < 0) {
+					System.out.println("오류 : 매출단가는 0이상이여야 합니다.");
+					continue;
+				}
+				break;
 			}
-			break;
-		}
-		IolistVO_A iolistVO = new IolistVO_A();
-		iolistVO.setPname(pname);
-		iolistVO.setDate(date);
-		iolistVO.setDname(dname);
-		iolistVO.setInout(inout);
-		iolistVO.setIprice(iprice);
-		iolistVO.setOprice(oprice);
-		iolistVO.setQty(qty);
+			IolistVO_A iolistVO = new IolistVO_A();
+			iolistVO.setPname(pname);
+			iolistVO.setDate(date);
+			iolistVO.setDname(dname);
+			iolistVO.setInout(inout);
+			iolistVO.setIprice(iprice);
+			iolistVO.setOprice(oprice);
+			iolistVO.setQty(qty);
 
-		// iolistVO에 저장한 데이터 확인
-		this.printIolist(iolistVO);
+			// iolistVO에 저장한 데이터 확인
+			this.printIolist(iolistVO);
 
-		// 입력된 매입매출 데이터를 데이터 리스트에 담기
-		iolist.add(iolistVO);
-	}// end input
+			// 입력된 매입매출 데이터를 데이터 리스트에 담기
+			iolist.add(iolistVO);// List형 객체 iolist
+		} // end input
+	}
 }
