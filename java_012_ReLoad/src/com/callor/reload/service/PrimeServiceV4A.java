@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class PrimeServiceV4 {
+public class PrimeServiceV4A {
 
 	protected Random rnd;
-	protected List<Integer> intList;
+	protected List<Integer> intList; 
 
-	public PrimeServiceV4() {
+	public PrimeServiceV4A() {
 		rnd = new Random();
 		intList = new ArrayList<Integer>();
 	}
