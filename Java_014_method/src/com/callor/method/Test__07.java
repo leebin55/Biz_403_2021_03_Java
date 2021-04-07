@@ -9,5 +9,6 @@ public class Test__07 {
 		ScoretServiceV6A ssV6 = new ScoretServiceV6A();
 		
 		ssV6.inputScore();
+	
 	}
 }
