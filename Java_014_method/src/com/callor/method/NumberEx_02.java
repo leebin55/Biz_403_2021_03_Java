@@ -13,7 +13,13 @@ public class NumberEx_02 {
 		
 		//문자열 1개와 정수 2개 전달
 		//2개의 정수 범위내의 값이 입력됫는지 유효성 검사 수행
-		isV1.inputValue("새우깡",0,100);
+		Integer retNum = isV1.inputValue("새우깡",0,100);
+		if(retNum == null) {
+			System.out.println("종료");
+			
+		}else {
+			System.out.println("점수 : " + retNum);
+		}
 		
 	}
 }
