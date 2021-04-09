@@ -7,13 +7,13 @@ import java.util.Scanner;
 import com.callor.app.model.ScoreVO;
 import com.callor.app.service.ScoreService;
 
-public class ScoreServiceImplV1AA implements ScoreService {
+public class ScoreServiceImplV1A implements ScoreService {
 
 	protected Scanner scan;
 	List<ScoreVO> scoreList;
 	String[] subs;
 
-	public ScoreServiceImplV1AA() {
+	public ScoreServiceImplV1A() {
 		scan = new Scanner(System.in);
 		scoreList = new ArrayList<ScoreVO>();
 		subs = new String[] { "국어", "영어", "수학" };

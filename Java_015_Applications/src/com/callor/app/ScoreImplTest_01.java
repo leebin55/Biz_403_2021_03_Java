@@ -6,8 +6,12 @@ public class ScoreImplTest_01 {
 
 	public static void main(String[] args) {
 		
-		ScoreServiceImplV1 ssV1 = new ScoreServiceImplV1();
+		//ScoreServiceImplV1 ssV1 = new ScoreServiceImplV1();
 		
-		ssV1.selectMenu(); 
+		//ssV1.selectMenu();
+		
+		ScoreServiceImplV1 ssA = new ScoreServiceImplV1();
+		
+		ssA.selectMenu();
 	}
 }

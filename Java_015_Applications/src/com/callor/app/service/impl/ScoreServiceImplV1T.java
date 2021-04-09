@@ -8,7 +8,11 @@ import com.callor.app.model.ScoreVO;
 import com.callor.app.service.ScoreService;
 import com.yublee.standard.InputService;
 import com.yublee.standard.impl.InputServiceImplV1;
-
+/*
+ * 현재 클래스 내부에서만 호출되는 method private으로 선언
+ * 현재 클래스를 상속받아 확장하여 사용할 수 있도록 하려면
+ * private => protected로 변경
+ */
 /*
  * 1. 메뉴를 먼저 보여줌
  * 2. 성적 입력 : 학생 수의 제한이 없음
@@ -25,7 +29,7 @@ import com.yublee.standard.impl.InputServiceImplV1;
  *  		> 학생이름을 입력받고 입력받은 학생이름을 return
  *  		> 이 return받은 학생이름을 inputNum() method에서 사용가능`ㅡㅂ		
  */
-public class ScoreServiceInplV1T implements ScoreService {
+public class ScoreServiceImplV1T implements ScoreService {
 	// 저장소
 	protected List<ScoreVO> scoreList;
 
@@ -35,7 +39,7 @@ public class ScoreServiceInplV1T implements ScoreService {
 	// 학생의 이름을 입력받을떄
 	protected Scanner scan;
 
-	public ScoreServiceInplV1T() {
+	public ScoreServiceImplV1T() {
 		scan = new Scanner(System.in);
 		scoreList = new ArrayList<ScoreVO>();
 		inService = new InputServiceImplV1();
@@ -83,7 +87,7 @@ public class ScoreServiceInplV1T implements ScoreService {
 		return null;
 	}
 
-	private String inputNum() {
+	protected String inputNum() {
 		// 학번입력처리 : 001 , 002 형식으로 >> 문자열
 		// 정수 1 이상을 입력하면 정수 값이 intNum 에 담기고
 		// QUIT 입력했으면 null 값이 intNum에 담김
@@ -113,7 +117,7 @@ public class ScoreServiceInplV1T implements ScoreService {
 	public void inputScore() {
 		// TODO 학번, 이름, 과목점수를 입력받아 List에 추가
 
-		String strNum = this.inputName();
+		String strNum = this.inputNum();
 		if (strNum == null) {
 			return;
 		}
@@ -154,7 +158,7 @@ public class ScoreServiceInplV1T implements ScoreService {
 		scoreList.add(scoreVO);
 	}
 
-	private String inputName(String strNum) {
+	protected String inputName(String strNum) {
 		// TODO 학번으로 보여주고 이름을 입력받는 method
 
 		while (true) {
