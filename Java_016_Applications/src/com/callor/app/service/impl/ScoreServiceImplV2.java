@@ -141,10 +141,22 @@ public class ScoreServiceImplV2 implements ScoreService {
 			
 			strFileName = "src/com/callor/app/" + strFileName + ".txt"; 
 			//방금저장한 파일이름으로 저장하겠다
+			//.csv로 확장자 > ,를 기준으로 엑셀가능
 			try {
 				fileWriter = new FileWriter(strFileName);
 				out = new PrintWriter(fileWriter);
 				int nSize = scoreList.size();
+				/* 
+				 * 파일에 저장할때
+				 * 각 데이터를 컴마(,)로 구분하여 입력하고 
+				 * 파일 이름을 *.csv로 저장하면
+				 * exel 파일에서 읽을 수 있음
+				 * 
+				 * csv : comma - separated - variables
+				 * 컴마를 기준으로 값을 구분
+				 * 
+				 * 
+				 */
 				for(int i = 0; i < nSize ; i++) {
 					ScoreVO vo = scoreList.get(i);
 					out.print(vo.getNum() + ", ");
