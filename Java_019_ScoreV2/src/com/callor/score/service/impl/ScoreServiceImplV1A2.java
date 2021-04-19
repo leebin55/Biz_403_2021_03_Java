@@ -26,7 +26,7 @@ public class ScoreServiceImplV1A2 implements ScoreService {
 
 		scoreList = new ArrayList<ScoreVO>();
 		inService = new InputServiceImplV1();
-		sService = new StudentServiceImplV1A();
+		sService = new StudentServiceImplV1WithT();
 		scan = new Scanner(System.in);
 	}
 
@@ -90,7 +90,12 @@ public class ScoreServiceImplV1A2 implements ScoreService {
 
 	protected ScoreVO numCheck(String num) {
 		for (ScoreVO vo : scoreList) {// 확장된 for
-
+/*
+ *			 int nSize = scoreList.size();
+		for (int i = 0; i < nSize; i++) {
+			ScoreVO vo = scoreList.get(i); 가 줄여져서 쓰이는 것과 같다
+ */
+			
 			if (vo.getNum().equals(num)) {
 				return vo;
 			}

@@ -10,7 +10,7 @@ import java.util.List;
 import com.callor.score.model.StudentVO;
 import com.callor.score.service.StudentService;
 //StudentEx_01
-public class StudentServiceImplV1A implements StudentService {
+public class StudentServiceImplV1WithT implements StudentService {
 	// 클래스영역에 선언할 때 private 이나 상속할 예정이면 protected
 	protected List<StudentVO> studentList;
 	protected String studentFile;
@@ -30,7 +30,7 @@ public class StudentServiceImplV1A implements StudentService {
  *
  *	생성자에서 new StudentServiceImplV1A("파일명") 의 생성자 method를 다시 호출하는 구조
  */
-	public StudentServiceImplV1A() { //처음에 이 생성자가 호출됨 
+	public StudentServiceImplV1WithT() { //처음에 이 생성자가 호출됨 
 		/* 
 		 * 여기에서 다음의 생성자 메서드를 또 한번 호출  this
 		 * new StudentServiceImplV1A("src/com/callor/score/student.txt");
@@ -40,7 +40,7 @@ public class StudentServiceImplV1A implements StudentService {
 		//생성자에게 전달
 	}
 
-	public StudentServiceImplV1A(String fileName) {
+	public StudentServiceImplV1WithT(String fileName) {
 		this.studentFile = fileName; //생성자에서 파일이름을 전달받아
 		studentList = new ArrayList<StudentVO>();
 		//studentList가 생성된 다음에 호출!!!!!반드시 중요

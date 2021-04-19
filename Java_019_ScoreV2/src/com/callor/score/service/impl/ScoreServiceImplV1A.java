@@ -24,7 +24,7 @@ public class ScoreServiceImplV1A implements ScoreService {
 	public ScoreServiceImplV1A() {
 		scoreList = new ArrayList<ScoreVO>();
 		inService = new InputServiceImplV1();
-		sService = new StudentServiceImplV1A();
+		sService = new StudentServiceImplV1WithT();
 		scan = new Scanner(System.in);
 	}
 

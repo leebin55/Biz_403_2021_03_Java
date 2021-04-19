@@ -1,13 +1,13 @@
 package com.callor.score;
 
 import com.callor.score.service.StudentService;
-import com.callor.score.service.impl.StudentServiceImplV1A;
+import com.callor.score.service.impl.StudentServiceImplV1WithT;
 
 public class StudentEx_01 {
 
 	public static void main(String[] args) {
 		//기본값으로 설정된 파일을 사용하여 객체 생성 진행
-		StudentService sService1 = new StudentServiceImplV1A();
+		StudentService sService1 = new StudentServiceImplV1WithT();
 		
 		// ../student.txt 파일을 사용하여 객체 생성해서 진행
 		//StudentService sService2 = new StudentServiceImplV1A( "src/com/callor/score/studemt.txt");
