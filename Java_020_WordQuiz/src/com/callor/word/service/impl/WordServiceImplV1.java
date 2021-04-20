@@ -11,11 +11,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 import com.callor.word.domain.WordVO;
+import com.callor.word.service.WordService;
 import com.yublee.standard.InputService;
 import com.yublee.standard.MenuService;
 import com.yublee.standard.impl.InputServiceImplV1;
 
-public class WordServiceImplV1{
+public class WordServiceImplV1 implements WordService{
 
 	protected InputService inService;
 	protected MenuService mServince;
@@ -25,7 +26,7 @@ public class WordServiceImplV1{
 	protected Random rnd;
 	
 	protected final int 영어 = 0;
-	protected final int 한글 = 0;
+	protected final int 한글 = 1;
 	
 	//default생성자 
 	//word.txt 파일을 기본으로 하여 객체를 생성 하기 위한 생성자
@@ -112,7 +113,7 @@ public class WordServiceImplV1{
 		//System.out.println(Arrays.toString(suffleEnglish));
 		return shuffleEnglish;
 	}
-	private void inputWord(String[] viewWord) {
+	protected String inputWord(String[] viewWord) {
 		System.out.println("=".repeat(50));
 		System.out.println("루팡의 영단어 게임 v1");
 		System.out.println("-".repeat(50));
@@ -121,12 +122,14 @@ public class WordServiceImplV1{
 		System.out.println(Arrays.toString(viewWord));
 		System.out.print(" >> ");
 		String strInput = scan.nextLine();
+		return strInput;
 	}
 	
 	/*
 	 * 영문 단어를 매개변수로 받아서 알파벳 단위라 자르고 뒤섞어 배열로 만둔후 return
+	 * private >> protected 로 변
 	 */
-	private String[] shuffleWord(String strEnglish) {// 단어를 매개변수를 받고 배열을 return해줌
+	protected String[] shuffleWord(String strEnglish) {// 단어를 매개변수를 받고 배열을 return해줌
 		//>> 독립적인 메소드가 됨
 		String shuffleEnglish[] = strEnglish.split("");
 		
