@@ -40,7 +40,8 @@ public class ListEx_02 {
 			for(int j = i+1; j < nSize;j++) {
 				if(list.get(i) > list.get(j)) {
 					Integer te = list.get(i);//임시적으로 te에 n번째 값을 담음
-					list.set(i,list.get(j));
+					list.set(i,list.get(j));// List의 i 위치에 있는 값을 list.get(j)값으로 바꾸겟다
+					 
 					list.set(j, te);
 				
 				}
