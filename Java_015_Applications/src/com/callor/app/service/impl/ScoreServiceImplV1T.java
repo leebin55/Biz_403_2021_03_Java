@@ -38,6 +38,7 @@ public class ScoreServiceImplV1T implements ScoreService {
 
 	// 학생의 이름을 입력받을떄
 	protected Scanner scan;
+	
 
 	public ScoreServiceImplV1T() {
 		scan = new Scanner(System.in);

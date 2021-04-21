@@ -26,7 +26,7 @@ public class FileWriter_02 {
 			out.close();
 			System.out.println("완료 !! 집가자!!");
 		} catch (Exception e) {
-			
+			System.out.println("파일을 만들수 없음");
 		}
 	}
 }
