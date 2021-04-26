@@ -10,19 +10,23 @@ public class MainEx_05 {
 
 		// 100개의 배열에 임의 정수 100 개 저장
 		for (int i = 0; i < nums.length; i++) {
-			nums[i] = rnd.nextInt();
+			nums[i] = rnd.nextInt(100)+1;
 		}
 		
 		//배열 100에 저장된 값중에서 소수인 값들만 출력
 		for (int i = 0; i< nums.length; i++) {
 			
 			int index= 0;
-			for (index = 2; index < nums.length ; index++) {
+			for (index = 2; index < nums[i] ; index++) {
 				if(nums[i] % index == 0) {
 					break;
 				}
 			}
+			if(index>=nums[i]) {
+				System.out.println(i + " 번째 : "+ nums[i]);
+			}
 		}
+		
 		
 	}
 }

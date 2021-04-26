@@ -18,4 +18,15 @@ public class MainEx_07 {
 	 * =====================================================================
 	 * 
 	 */
+	public static void main(String[] args) {
+	int num = 5;
+	System.out.println("=".repeat(50));
+	System.out.println(num + "단 구구단");
+	System.out.println("-".repeat(50));
+	
+	for(int i = 0; i< 9 ; i++) {
+		System.out.printf("%d x %d = %d \n", num , i+1,num*(i+1));
+	}
+	System.out.println("=".repeat(50));
+	}
 }
